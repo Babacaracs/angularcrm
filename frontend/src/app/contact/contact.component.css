@@ -1,0 +1,8 @@
+.my-pagination /deep/ .ngx-pagination .current {
+    background: rgba(228, 97, 10, 0.993);
+  }
+  .my-pagination /deep/ .ngx-pagination
+  {
+      margin-left: 27% !important;
+      margin-top: 1%;
+  }

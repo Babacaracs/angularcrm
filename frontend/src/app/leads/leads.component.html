@@ -1,0 +1,192 @@
+<app-top> </app-top>
+<br>
+
+
+
+<div  class="row" [hidden]="onEmplacement()==='Ajout'">
+        
+        <h3 align="center"> Modification </h3>
+
+       
+</div>
+<div  class="row" [hidden]="onEmplacement()==='Edit'">
+        
+        <h3 align="center"> Création de prospect </h3>
+
+       
+</div>
+
+
+
+<div class="container" id="addleads" >
+<form #addleads ="ngForm" (ngSubmit) ="onChoiceAction()">
+<div class="row">
+    <div class="col-md-6">
+            <div class='col-md-3'>
+                    <div class="form-group">
+                        <label for="civilite">Civilité</label>
+                        <select class='form-control' name="salutation" [(ngModel)]= "model.salutation">
+                                <option>Monsieur</option>
+                                <option>Mme</option>
+                                <option>Mlle</option>
+                                <option>Docteur</option>
+                                <option>Professeur</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='col-md-9'>
+                        <div class="form-group">
+                                <label for="prénom">Prénom</label>
+                            <input class="form-control" type="text" placeholder="prénom" name="first_name" [(ngModel)]= "model.first_name">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="bureau">Téléphone du bureau</label>
+                            <input class="form-control" type="text" placeholder="téléphone de bureau" name="phone_work" [(ngModel)]= "model.phone_work"  >
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="mobile">Téléphone mobile</label>
+                            <input class="form-control" type="text" placeholder="téléphone mobile" name="phone_mobile" [(ngModel)]= "model.phone_mobile">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="fax">Fax</label>
+                                <input class="form-control" type="text" placeholder="Fax" name="phone_fax" [(ngModel)]= "model.phone_fax">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="site web">Site web</label>
+                                <input class="form-control" type="text" placeholder="Site web" name="website" [(ngModel)]= "model.website" >
+                        </div>
+                </div>
+
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="description">description</label>
+                                <textarea class="form-control" rows="4" cols="50" placeholder="Description" name="description" [(ngModel)]= "model.description" > </textarea>
+                        </div>
+                </div>
+
+                <div class='col-md-12'>
+                        <div class="form-group">
+                            <label for="statut">Statut</label>
+                            <select class='form-control' name="status" [(ngModel)]= "model.status">
+                                    <option>Nouveau</option>
+                                    <option>Attribué</option>
+                                    <option>En cours</option>
+                                    <option>Converti</option>
+                                    <option>Réactivé</option>
+                                    <option>Mort</option>
+                                    <option>Conctacté</option>
+                            </select>
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="description statut">description statut</label>
+                                <textarea class="form-control" rows="4" cols="50" placeholder="Description statut" name="status_description" [(ngModel)]= "model.status_description"> </textarea>
+                        </div>
+                </div>
+                <div class='col-md-12'> 
+                        <div class="form-group">
+                                <label for="Montant affaire">Montant affaire</label>
+                                <input class="form-control" type="text" placeholder="Montant de l'affaire" name="opportunity_amount" [(ngModel)]= "model.opportunity_amount" >
+                        </div>
+                </div>
+
+    </div>
+    <div class="col-md-6">
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="Référence prospect">Référence prospect</label>
+                            <input class="form-control" type="text" placeholder="Référence prospect" name="codeprospect_c" [(ngModel)]= "model.codeprospect_c" >
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="nom de famille">Nom de famille</label>
+                            <input #name="ngModel" class="form-control" type="text" placeholder="Nom de famille -obligatoire" name="last_name" [(ngModel)]= "model.last_name" required>
+                    </div>
+                
+            </div>
+         
+
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="titre">Titre</label>
+                            <input class="form-control" type="text" placeholder="titre" name="title" [(ngModel)]= "title" >
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="services">Services</label>
+                            <input class="form-control" type="text" placeholder="Services" name="department" [(ngModel)]= "model.department" >
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="Nom du compte">Nom du compte</label>
+                            <input class="form-control" type="text" placeholder="Nom du compte" name="account_name" [(ngModel)]= "model.account_name" >
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="site web">Adresse electronique</label> 
+                            <input class="form-control" type="text" placeholder="Adresse electronique" name="Leads0emailAddress0" [(ngModel)]= "model.Leads0emailAddress0"  >
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <br><br><br>
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                        <label for="Origine du prospect">Origine du prospect</label>
+                        <select class='form-control' name="lead_source" [(ngModel)]= "model.lead_source">
+                                <option>Appel de prospection</option>
+                                <option>Client existant</option>
+                                <option>Employé</option>
+                                <option>Partenaire</option>
+                                <option>Relation publique</option>
+                                <option>Mailing</option>
+                                <option>Conférence</option>
+                                <option>Salon</option>
+                                <option>Site web</option>
+                                <option>Recommendé</option>
+                                <option>E-mail</option>
+                                <option>Campagne</option>
+                                <option>Autre</option>
+                        </select>
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="description origine" >description origine</label>
+                            <textarea class="form-control" rows="4" cols="50" placeholder="description de l'origine"  name="lead_source_description" [(ngModel)]= "model.lead_source_description" > </textarea>
+                    </div>
+            </div>
+            <div class='col-md-12'>
+                    <div class="form-group">
+                            <label for="Fait référence à">Fait référence à</label>
+                            <input class="form-control" type="text" placeholder="fait référence à" name="refered_by" [(ngModel)]= "model.refered_by">
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+
+        <div  class="row" [hidden]="onEmplacement()==='Edit'">
+                <button type="submit"  class="btn btn-primary">Créer</button>
+        </div>
+        <div  class="row" [hidden]="onEmplacement()==='Ajout'">
+                <button type="submit"  class="btn btn-danger">Modifier</button>
+        </div>
+</form>
+</div>

@@ -1,0 +1,507 @@
+<app-top></app-top>
+<div class="container">
+    <form #addcontacts ="ngForm" (ngSubmit) ="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class='col-md-3'>
+                        <div class="form-group">
+                            <label for="civilite">Civilité</label>
+                            <select class='form-control' name="salutation" [(ngModel)]= "model.salutation">
+                                    <option>Monsieur</option>
+                                    <option>Mme</option>
+                                    <option>Mlle</option>
+                                    <option>Docteur</option>
+                                    <option>Professeur</option>
+                            </select>
+                        </div>
+                </div>
+                <div class='col-md-9'>
+                        <div class="form-group">
+                                <label for="prénom">Prénom</label>
+                            <input class="form-control" type="text" placeholder="prénom" name="first_name" [(ngModel)]= "model.first_name">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="Fonction">Fonction</label>
+                            <input class="form-control" type="text" placeholder="Fonction" name="title" [(ngModel)]= "model.title"  >
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="email">Adresse email</label>
+                            <input class="form-control" type="text" placeholder="Adresse email" name="Contacts0emailAddress0" [(ngModel)]= "model.Contacts0emailAddress0"  >
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="fax">Fax</label>
+                                <input class="form-control" type="text" placeholder="Fax" name="phone_fax" [(ngModel)]= "model.phone_fax">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                            <label for="sous segment de marche">Sous segment de marché</label>
+                            <select class='form-control' name="soussegmentmarche_c" [(ngModel)]= "model.soussegmentmarche_c">
+                                    <option>Self Employed</option>
+                                    <option>Entrant</option>
+                                    <option>Householder</option>
+                                    <option>Student & Young Active premium</option>
+                                    <option>Young</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='col-md-12'>
+                            <div class="form-group">
+                                    <label for="Agent validateur">Agent validateur</label>
+                                    <input class="form-control" type="text" placeholder="Agent validateur" name="agent_validateur_c" [(ngModel)]= "model.agent_validateur_c">
+                            </div>
+                    </div>
+                    <div class='col-md-12'>
+                            <div class="form-group">
+                                    <label for="Segmentation digitale">Segmentation digitale </label>
+                                    <input class="form-control" type="text" placeholder="Segmentation digitale" name="segmentation_digitale_c" [(ngModel)]= "model.segmentation_digitale_c">
+                            </div>
+                    </div>
+                    <div class='col-md-12'>
+                            <div class="form-group">
+                                    <label for="Autorité émetrice">Autorité émetrice de la carte d'identité </label>
+                                    <input class="form-control" type="text" placeholder="Autorités émetrices" name="autorite_emetrice_de_la_piec_c" [(ngModel)]= "model.autorite_emetrice_de_la_piec_c">
+                            </div>
+                    </div>
+                    <div class='col-md-12'>
+                            <div class="form-group">
+                                    <label for="Date délivrance">Date de délivrance </label>
+                                    <input class="form-control" type="date" placeholder="date de délivrance" name="date_de_delivrance_piece_ide_c_trigger" [(ngModel)]= "model.date_de_delivrance_piece_ide_c_trigger">
+                            </div>
+                    </div>
+                    <div class='col-md-12'>
+                            <div class="form-group">
+                                   <br><br><br>
+                            </div>
+                    </div>
+                    <div class='col-md-12'>
+                            <div class="form-group">
+                                <label for="scoring client">Scoring client </label>
+                                <select class='form-control' name="scoringclient_c" [(ngModel)]= "model.scoringclient_c">
+                                        <option>Aucun</option>
+                                        <option>Client indélicat</option>    
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="scoring client">Sensibilité </label>
+                                    <select class='form-control' name="sensibilite_contact_c" [(ngModel)]= "model.sensibilite_contact_c">
+                                            <option>Basse</option>
+                                            <option>Haute</option> 
+                                            <option>Moyenne</option>   
+                                    </select>
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                           <br><br><br>
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                            <label for="Nom de la société">Nom de la société </label>
+                                            <input class="form-control" type="text" placeholder="Nom de la société" name="nom_de_la_societe_c" [(ngModel)]= "model.nom_de_la_societe_c">
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                            <label for="mobile">Téléphone professionnel</label>
+                                        <input class="form-control" type="text" placeholder="téléphone professionnel" name="telephone_professionnel_c" [(ngModel)]= "model.telephone_professionnel_c">
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                           <br><br><br>
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                            <label for="fax">Nom du conjoint</label>
+                                            <input class="form-control" type="text" placeholder="Nom du conjoint" name="nom_du_conjoint_c" [(ngModel)]= "model.nom_du_conjoint_c">
+                                    </div>
+                            </div>
+
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                            <label for="Date de naissance">Date de naissance </label>
+                                            <input class="form-control" type="date" placeholder="date de délivrance" name="date_de_naissance_c_trigger" [(ngModel)]= "model.date_de_naissance_c_trigger">
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                           <br><br><br>
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                            <label for="Date de naissance">Date de la dernière campagne marketing </label>
+                                            <input class="form-control" type="date" placeholder="date de dernière campagne marketing" name="date_dernier_camp_c_trigger" [(ngModel)]= "model.date_dernier_camp_c_trigger">
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                           <br><br><br>
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                            <label for="Exonération">Exonération </label>
+                                            <input class="form-control" type="date" placeholder="Exonération" name="exoneration_c_trigger" [(ngModel)]= "model.exoneration_c_trigger">
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                           <br><br><br>
+                                    </div>
+                            </div>
+                            <div class='col-md-12'>
+                                    <div class="form-group">
+                                        <label for="canal de création">Canal de création</label>
+                                        <select class='form-control' name="canal_de_creation_c" [(ngModel)]= "model.canal_de_creation_c">
+                                                <option>Selectionnez</option>
+                                                <option>Boutique</option> 
+                                                <option>Orange</option>
+                                                <option>pdv</option>
+                                                <option>distributeurs</option>
+                                                <option>franchise</option>
+                                                <option>Adv</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="Heure privilégiée">Heure privilégiée</label>
+                                            <select class='form-control' name="canal_de_creation_c" [(ngModel)]= "model.canal_de_creation_c">
+                                                    <option>Matin</option>
+                                                    <option>Après midi</option> 
+                                                    <option>Soir</option>
+                                        
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Envoi en nombre</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                               
+                                                                        <label for="oui">Oui </label>
+                                                                        <input type="radio" value="oui" name="envoi_en_nombre_c" [(ngModel)]= "model.envoi_en_nombre_c">
+                                                                
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non </label>
+                                                                        <input  type="radio" value="non" name="envoi_en_nombre_c" [(ngModel)]= "model.envoi_en_nombre_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                                   </div>
+                                   <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Télécopie</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                               
+                                                                        <label for="oui">Oui </label>
+                                                                        <input  type="radio" value="oui" name="telecopie_c" [(ngModel)]= "model.telecopie_c">
+                                                                
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non </label>
+                                                                        <input  type="radio" value="non" name="telecopie_c" [(ngModel)]= "model.telecopie_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                                   </div>
+                                    
+                                
+            </div>
+            <div class="col-md-6">
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="nom de famille">Nom de famille</label>
+                                <input class="form-control" type="text" placeholder="nom de famille" name="last_name" [(ngModel)]= "model.last_name">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="mobile">Téléphone mobile</label>
+                                    <input class="form-control" type="text" placeholder="téléphone mobile" name="phone_mobile" [(ngModel)]= "model.phone_mobile">
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="services">Services</label>
+                                        <input class="form-control" type="text" placeholder="Services" name="department" [(ngModel)]= "model.department" >
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                       <br><br><br>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="sous segment de marche">Segment de marché </label>
+                                    <select class='form-control' name="segmentdemarche_c" [(ngModel)]= "model.segmentdemarche_c">
+                                            <option>B2C</option>
+                                            <option>Interlocuteurs</option>
+                                    </select>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="segment valeur">Segment de valeurs </label>
+                                    <select class='form-control' name="segmentvaleur_c" [(ngModel)]= "model.segmentvaleur_c">
+                                            <option>VIP</option>
+                                            <option>Super High value</option>
+                                            <option>High value</option>
+                                            <option>Middle value</option>
+                                            <option>Low value </option>
+                                    </select>
+                                </div>
+                  </div>
+                  <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="segemtsocio pro">Segment socio professionnel</label>
+                                        <input class="form-control" type="text" placeholder="Segment socio professionnel" name="seg_socio_professionel_c" [(ngModel)]= "model.seg_socio_professionel_c">
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="mobile">Numéro CIN </label>
+                                    <input class="form-control" type="text" placeholder="Numéro CIN" name="numero_piece_identite_c" [(ngModel)]= "model.numero_piece_identite_c">
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="Date de naissance">Date d'expiration CIN </label>
+                                        <input class="form-control" type="date" placeholder="date d'expiration" name="date_expiration_piece_identi_c" [(ngModel)]= "model.date_expiration_piece_identi_c">
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="Envoi en nombre">Pièce d'identité jointe</label>
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                        <label for="oui">Oui </label>
+                                                        <input type="radio" value="oui" name="piece_identite_jointe_c" [(ngModel)]= "model.piece_identite_jointe_c">  
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <div class="col-sm-offset-0">
+                                                                <label for="oui">non </label>
+                                                                <input  type="radio" value="non" name="piece_identite_jointe_c" [(ngModel)]= "model.piece_identite_jointe_c">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                  </div>
+                           </div>
+                <div class='col-md-12'>
+                        <div class="form-group">
+                                <label for="Agence de création">Agence de création</label>
+                                <input class="form-control" type="text" placeholder="Agence de création" name="agence_creation_c" [(ngModel)]= "model.agence_creation_c">
+                        </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                       <br><br><br>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                       <br><br><br>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                       <br><br><br>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                       <br><br><br>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                       <br>
+                                </div>
+                </div>
+                <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="etat_civil">Etat civil </label>
+                                    <select class='form-control' name="etat_civil_c" [(ngModel)]= "model.etat_civil_c">
+                                            <option>Marié</option>
+                                            <option>Célibataire</option>
+                                    </select>
+                                </div>
+                  </div>
+                  <div class='col-md-12'>
+                                <div class="form-group">
+                                        <label for="Nationalité">Nationalité</label>
+                                        <input class="form-control" type="text" placeholder="Nationalité" name="nationalite_c" [(ngModel)]= "model.nationalite_c">
+                                </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                               <br><br><br><br>
+                                        </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                               <br>
+                                        </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Documents marketing</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label for="oui">Oui </label>
+                                                                <input type="radio" value="oui" name="document_marketing_c" [(ngModel)]= "model.document_marketing_c">  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non </label>
+                                                                        <input  type="radio" value="non" name="document_marketing_c" [(ngModel)]= "model.document_marketing_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                               <br><br>
+                                        </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                               <br>
+                                        </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Exonoré</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label for="oui">Oui </label>
+                                                                <input  type="radio" value="oui" name="exonere_c" [(ngModel)]= "model.exonere_c">  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non </label>
+                                                                        <input  type="radio" value="non" name="exonere_c" [(ngModel)]= "model.exonere_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                               <br><br>
+                                        </div>
+                        </div>
+                        
+                        
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="segment valeur">Mode de communication privilégié </label>
+                                            <select class='form-control' name="mode_communication_c" [(ngModel)]= "model.mode_communication_c">
+                                                    <option>Sans préférence</option>
+                                                    <option>Courrier electronique</option>
+                                                    <option> telephone</option>
+                                                    <option>telecopie</option>
+                                                    <option>courrier postal</option>
+                                            </select>
+                                        </div>
+                          </div>
+                          <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="segment valeur">Jour privilégié </label>
+                                            <select class='form-control' name="jour_privilegies_c" [(ngModel)]= "model.jour_privilegies_c">
+                                                    <option>Lundi</option>
+                                                    <option>Mardi</option>
+                                                    <option> Mercredi</option>
+                                                    <option>Jeudi</option>
+                                                    <option>Vendredi</option>
+                                                    <option>Samedi</option>
+                                                    <option>Dimanche</option>
+                                            </select>
+                                        </div>
+                          </div>
+                          <div class='col-md-12'>
+                                        <div class="form-group">
+                                               <br>
+                                        </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Courrier electronique</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label for="oui">Oui :</label>
+                                                                <input type="radio" value="oui" name="courrier_electronic_c" [(ngModel)]= "model.courrier_electronic_c">  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non : </label>
+                                                                        <input   type="radio" value="non" name="courrier_electronic_c" [(ngModel)]= "model.courrier_electronic_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Téléphone</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label for="oui">Oui :</label>
+                                                                <input type="radio" value="oui" name="telephone_c" [(ngModel)]= "model.telephone_c">  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non : </label>
+                                                                        <input   type="radio" value="non" name="telephone_c" [(ngModel)]= "model.telephone_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                        </div>
+                        <div class='col-md-12'>
+                                        <div class="form-group">
+                                                <label for="Envoi en nombre">Courrier postal</label>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label for="oui">Oui :</label>
+                                                                <input type="radio" value="oui" name="courrier_postal_c" [(ngModel)]= "model.courrier_postal_c">  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="col-sm-offset-0">
+                                                                        <label for="oui">non : </label>
+                                                                        <input   type="radio" value="non" name="courrier_postal_c" [(ngModel)]= "model.courrier_postal_c">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                          </div>
+                        </div>
+                        
+
+            </div>
+        </div>
+        <button type="submit"  class="btn btn-primary">Créer</button>
+    </form>
+</div>

@@ -1,0 +1,77 @@
+import { Component, OnInit } from '@angular/core';
+import {Compte} from '../model/compte';
+import {CompteService} from '../allservices/compte.service';
+import * as $ from 'jquery';
+
+@Component({
+  selector: 'app-accounts',
+  templateUrl: './accounts.component.html',
+  styleUrls: ['./accounts.component.scss']
+})
+export class AccountsComponent implements OnInit {
+
+  dataarray = [];
+  comptes: Compte[];
+  compte = new Compte();
+
+  constructor( private apiService: CompteService) { }
+  ngOnInit() {
+    this.dataarray.push(this.compte);
+  }
+
+  saveCompte(form) {
+    this.apiService.AddCompte(this.compte)
+      .subscribe(
+        (res: Compte) => {
+          // Update the list of cars
+          this.compte = res;
+        },
+      );
+    console.log(this.compte);
+  }
+  addForm() {
+    this.compte = new Compte();
+    this.dataarray.push(this.compte);
+  }
+
+  removeForm(index) {
+    this.dataarray.splice(index);
+  }
+
+
+}
+-----------------------------------------------------------------------------------------------
+
+import { Injectable } from '@angular/core';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {Compte} from '../model/compte';
+import {Observable, throwError} from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CompteService {
+  PHP_API_SERVER = 'http://localhost/angularcrm/backend/post.php';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+  // comptes: Compte[];
+
+
+  constructor( private http: HttpClient) { }
+  AddCompte(compte: Compte): Observable<Compte> {
+    return this.http.post(`${this.PHP_API_SERVER}`, { data: compte }, this.httpOptions)
+      .pipe(map((res: Compte) => {
+          // this.comptes.push(res['data']);
+          return res;
+        }),
+        catchError(this.handleError));
+  }
+  private handleError(error: HttpErrorResponse) {
+    console.log(error);
+    return throwError('Error! something went wrong.');
+  }
+}

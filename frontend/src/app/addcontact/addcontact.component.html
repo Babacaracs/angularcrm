@@ -1,0 +1,422 @@
+<app-top> </app-top>
+<div class="container">
+        <form #contact ="ngForm" (ngSubmit) ="onSubmit()">
+           <div class="row">
+               <div class='col-md-6 col-lg-6 col-sm-6'>
+               <legend> Formulaire d'ajout de contacts </legend>
+                   
+                       <div class='col-md-4'>
+                           <div class="form-group">
+                               <label for="civilite">Civilité</label>
+                               <select class='form-control' name="civilite" [(ngModel)]= "model.civilite">
+                                       <option>Mr.</option>
+                                       <option>Mme</option>
+                                       <option>Mlle</option>
+                                       <option>Docteur</option>
+                                       <option>Professeur</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                       <label for="prénom">Prénom</label>
+                                   <input class="form-control" type="text" name="prenom" [(ngModel)]= "model.prenom" >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="phone">Telephone du bureau</label>
+                                   <input class="form-control" type='text' name="telehone_bureau" [(ngModel)]= "model.telehone_bureau" >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="fonction">Fonction</label>
+                                   <input class="form-control" type='text' name="fonction" [(ngModel)]= "model.fonction" >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="adresse electronique">Adresse electronique</label>
+                                   <input class="form-control" type='text' name="adresse_electronique" [(ngModel)]= "model.adresse_electronique" >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Fax">Fax</label>
+                                   <input class="form-control" type='text' name="fax" [(ngModel)]= "model.fax" >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group"> 
+                                   <label for="sous segment">Sous-segment marché</label>
+                                   <select class='form-control' name="sous_segment_marche" [(ngModel)]= "model.sous_segment_marche">
+                                           <option>Self Employed</option>
+                                           <option>Entrant</option>
+                                           <option>Householder</option>
+                                           <option>Student & Young premium</option>
+                                           <option>Young</option>
+                                   </select>
+                               </div>
+                       </div>
+       
+                       <div class='col-md-12'>
+                               <div class="form-group"> 
+                                   <label for="Autorite">Autorité emetrice de la carte d'identité</label>
+                                   <input class="form-control" type='text' name="authorite_emetrice" [(ngModel)]= "model.authorite_emetrice"   >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="date delivrance">Date de délivrance de la carte d'identité</label>
+                                   <input class="form-control" type='date'  name="date_delivrance" [(ngModel)]= "model.date_delivrance"  >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="scoring client">Scoring client</label>
+                                   <select class='form-control' name="scoring_client" [(ngModel)]= "model.scoring_client">
+                                           <option>Aucun</option>
+                                           <option>Client indelicat</option>
+                                   </select>
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="sensibilité">Sensibilité</label>
+                                   <select class='form-control' name="sensibilite" [(ngModel)]= "model.sensibilite">
+                                           <option>Basse</option>
+                                           <option>Moyenne</option>
+                                           <option>Haute</option>
+                                   </select>
+                               </div>
+                        </div>
+                        <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="société">Nom de la société</label>
+                                   <input class="form-control" type='text' name="nom_societe" [(ngModel)]= "model.nom_societe">
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="telephone professionnel">Téléphone professionnel</label>
+                                   <input class="form-control" type='text' name="telephone_profesionnel" [(ngModel)]= "model.telephone_profesionnel"    >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Nom du conjoint">Nom du conjoint</label>
+                                   <input class="form-control" type='text' name="nom_conjoint" [(ngModel)]= "model.nom_conjoint"  >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Date de naissance">Date de naissance</label>
+                                   <input class="form-control" type='date' name="date_naissance" [(ngModel)]= "model.date_naissance"    >
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Origine du prospect">Origine du prospect</label>
+                                   <select class='form-control' name="origine_prospect" [(ngModel)]= "model.origine_prospect">
+                                           <option>Appel de prospection</option>
+                                           <option>Client existant</option>
+                                           <option>Employé</option>
+                                           <option>Partenaire</option>
+                                           <option>Relation publique</option>
+                                           <option>Mailing</option>
+                                           <option>Conférence</option>
+                                           <option>Salon</option>
+                                           <option>Site web</option>
+                                           <option>Recommendé</option>
+                                           <option>E-mail</option>
+                                           <option>Campagne</option>
+                                           <option>Autre</option>
+                                   </select>
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Date de naissance">Document marketing</label>
+                                   <div class="col-sm-offset-0 col-sm-10">
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                               <label><input type="radio" name="document_marketing" [(ngModel)]= "model.document_marketing"> oui </label>
+                                           </div>
+                                       </div>
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                                   <label><input type="radio" name="document_marketing" [(ngModel)]= "model.document_marketing"> non</label>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                       </div>
+       
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="mode de communication">Mode de communication</label>
+                                   <select class='form-control' name="mode_communication" [(ngModel)]= "model.mode_communication">
+                                           <option>Sans préférence</option>
+                                           <option>Téléphone</option>
+                                           <option>télécopie</option>
+                                           <option>Courrier electronique</option>
+                                           <option>Courrier postal </option>
+                                   </select>
+                              </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="mode de communication">Jour privilégié</label>
+                                   <select class='form-control' name="jour_privilegie" [(ngModel)]= "model.jour_privilegie">
+                                           <option>Lundi</option>
+                                           <option>Mardi</option>
+                                           <option>Mercredi</option>
+                                           <option>Jeudi</option>
+                                           <option>Vendredi </option>
+                                           <option>Samedi </option>
+                                           <option>Dimanche </option>
+                                   </select>
+                               </div>
+                       </div>
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Date de naissance">Courrier electronique</label>
+                                   <div class="col-sm-offset-0 col-sm-10">
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                               <label><input type="radio" name="courrier_electronique" [(ngModel)]= "model.courrier_electronique"> oui </label>
+                                           </div>
+                                       </div>
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                                   <label><input type="radio" name="courrier_electronique" [(ngModel)]= "model.courrier_electronique"> non</label>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                       </div>
+       
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Date de naissance">Téléphone</label>
+                                   <div class="col-sm-offset-0 col-sm-0">
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                               <label><input type="radio"> oui </label>
+                                           </div>
+                                       </div>
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                                   <label><input type="radio"> non</label>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                       </div>
+                       
+                       <div class='col-md-12'>
+                               <div class="form-group">
+                                   <label for="Date de naissance">Courrier postal</label>
+                                   <div class="col-sm-offset-0 col-sm-0">
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                               <label><input type="radio"> oui </label>
+                                           </div>
+                                       </div>
+                                       <div class='col-md-6'>
+                                           <div class="checkbox">
+                                                   <label><input type="radio"> non</label>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                       </div>
+                       
+               
+                   
+           </div>
+           
+                   <div class="col-md-6 col-lg-6 col-sm-6">
+                       <br><br><br>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="nom">Nom de famille</label>
+                                       <input class="form-control" name="nom" [(ngModel)]= "model.nom" >
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="telephone mobile">Telephone mobile </label>
+                                       <input class="form-control" type='text' name="telehone_mobile" [(ngModel)]= "model.telephone_mobile"  >
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="services">Services </label>
+                                       <input class="form-control" type='text' name="service" [(ngModel)]= "model.service" >
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="nom du compte">Nom du compte </label>
+                                       <input class="form-control" type='text' name="nom_compte" [(ngModel)]= "model.nom_compte" >
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="segment de marché">segment de marché</label>
+                                       <select class='form-control' name="segment_marche" [(ngModel)]= "model.segment_marche">
+                                               <option>Interlocuteur</option>
+                                               <option>B2C</option>
+                                              
+                                       </select>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="segment de valeurs">segment de valeurs</label>
+                                       <select class='form-control' name="segment_valeur" [(ngModel)]= "model.segment_valeur">
+                                               <option>VIP</option>
+                                               <option>Super High Value</option>
+                                               <option>High value</option>
+                                               <option>Middle value</option>
+                                               <option>low value </option> 
+                                       </select>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="segment socio">Segment sociaux professionnel </label>
+                                       <input class="form-control" type='text' name="segment_sociaux_professionnel" [(ngModel)]= "model.segment_sociaux_professionnel">
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="Numero CIN">Numéro CIN </label>
+                                       <input class="form-control" type='text' name="numero_cin" [(ngModel)]= "model.numero_cin" >
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="date expiration cin">Date d'expiration CIN: </label>
+                                       <input class="form-control" type='date' name="date_expiration" [(ngModel)]= "model.date_expiration" >
+                                   </div>
+                           </div>
+       
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="piece d'identité jointe">Piece d'identité jointe</label>
+                                       <div class="col-sm-offset-0 col-sm-0">
+                                           <div class='col-md-6'>
+                                               <div class="checkbox">
+                                                   <label><input type="radio"> oui </label>
+                                               </div>
+                                           </div>
+                                           <div class='col-md-6'>
+                                               <div class="checkbox">
+                                                       <label><input type="radio"> non</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                           </div>
+       
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="Agence de création">Agence de création: </label>
+                                       <input class="form-control" type='text' name="agence_creation" [(ngModel)]= "model.agence_creation">
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="etat civil">Etat civil</label>
+                                       <select class='form-control' name="etat_civil" [(ngModel)]= "model.etat_civil">
+                                               <option>Marié</option>
+                                               <option>Célibataire</option>
+                                       </select>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="canal de création">Canal de création</label>
+                                       <select class='form-control' name="canal_creation" [(ngModel)]= "model.canal_creation">
+                                               <option>selectionner</option>
+                                               <option>Boutique</option>
+                                               <option>Orange</option>
+                                               <option>PDV</option>
+                                               <option> Franchise </option> 
+                                               <option> ADV </option> 
+                                       </select>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                      <br><br><br>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                           <br><br><br><br><br>
+                                       
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                           <br><br><br><br>
+                                      
+                                   </div>
+                           </div>
+       
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="Heure privilégiée">Heure privilégiée</label>
+                                       <select class='form-control' name="heure_privilegie" [(ngModel)]= "model.heure_privilegie">
+                                               <option>Matin</option>
+                                               <option>Après midi</option>
+                                               <option>Soir</option>
+                                       </select>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="envoi en nombre">Envoi en nombre</label>
+                                       <div class="col-sm-offset-0 col-sm-0">
+                                           <div class='col-md-6'>
+                                               <div class="checkbox">
+                                                   <label><input type="radio"> oui </label>
+                                               </div>
+                                           </div>
+                                           <div class='col-md-6'>
+                                               <div class="checkbox">
+                                                       <label><input type="radio"> non</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                           </div>
+                           <div class='col-md-12'>
+                                   <div class="form-group">
+                                       <label for="Date de naissance">Télécopie</label>
+                                       <div class="col-sm-offset-0 col-sm-0">
+                                           <div class='col-md-6'>
+                                               <div class="checkbox">
+                                                   <label><input type="radio"> oui </label>
+                                               </div>
+                                           </div>
+                                           <div class='col-md-6'>
+                                               <div class="checkbox">
+                                                       <label><input type="radio"> non</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                           </div>
+                   
+           </div>
+       </div>
+       
+       <button type="submit"  class="btn btn-primary btn btn-primary offset-4 col-md-4 col-lg-3 col-sm-4 col-xl-4 col-xs-4">Créer</button>
+       
+       </form>
+       </div>

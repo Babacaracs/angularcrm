@@ -1,0 +1,217 @@
+<p>
+  <button type="button" class="btn btn-primary btn-lg btn-block"
+           aria-controls="collapseExample">
+    Toggle
+  </button>
+
+</p>
+<div id="collapseExample" >
+
+</div>
+<div class="container">
+<form #f = "ngForm" >
+<!--  <div class="form-group">-->
+<!--    <label for="exampleSelect1">Statut:</label>-->
+<!--    <select class="form-control" id="exampleSelect1" name="statut_c" [(ngModel)]="compte.statut" >-->
+<!--      <option label="Activer" value="actif" selected="selected">Activer</option>-->
+<!--      <option label="désactiver" value="inactif">désactiver</option>-->
+<!--    </select>-->
+<!--  </div>-->
+  <button type="button" class="btn btn-primary btn-lg btn-block"
+           aria-controls="collapseExample">
+    Toggle
+  </button>
+  <div class="form-group">
+    <input type="text" class="fadeIn second" name="name" placeholder="Nom du compte" class="form-control" [(ngModel)]="compte.name">
+  </div>
+  <div class="form-group">
+    <input type="text" class="fadeIn second" name="phone_office" placeholder="telephone" class="form-control" [(ngModel)]="compte.phoneoffice">
+  </div>
+ <div class="form-group">
+    <input type="text" class="fadeIn second" name="website" placeholder="site web" class="form-control" [(ngModel)]="compte.website">
+  </div>
+  <div class="form-group">
+      <input type="text" class="fadeIn second" name="phone_fax" placeholder="phone fax" class="form-control" [(ngModel)]="compte.phonefax">
+    </div>
+  <div class="form-group" *ngFor="let obj of dataarray; let i=index">
+  <div class="input-group">
+        <input type="text" class="fadeIn second" name="Accounts0emailAddress{{i}}" id="email1" placeholder="email" class="form-control" [(ngModel)]="obj.email">
+    &nbsp;
+    &nbsp;
+    <div class="input-group-append">
+      <button class="btn btn-primary" *ngIf="i > 0" (click)="removeForm(i)">
+        <img src="https://img.icons8.com/ios/50/000000/plus.png"  style="width: 20px !important;">
+      </button>
+    </div>
+
+    &nbsp;
+    &nbsp;
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="addForm()">
+        <img src="https://img.icons8.com/ios/50/000000/plus.png"  style="width: 20px !important;">
+      </button>
+    </div>
+    &nbsp;
+    &nbsp;
+      </div>
+  </div>
+     <div class="form-group">
+       <textarea class="form-control" name="description" rows="3" [(ngModel)]="compte.description"></textarea>
+     </div>
+  <button type="button" class="btn btn-primary btn-lg btn-block"  aria-controls="collapseExample">
+    Toggle
+  </button>
+ <div class="form-group">
+   <label for="statut_juridique_c">Statut Juridique:</label>
+   <select style="width: 90%" name="statut_juridique_c" class="form-control" id="statut_juridique_c" [(ngModel)]="compte.statutjuridique">
+     <option label="Société Anonyme (SA)" value="sa" selected="selected">Société Anonyme (SA)</option>
+     <option label="Société à responsabilité limitée (SARL)" value="sarl">Société à responsabilité limitée (SARL)</option>
+     <option label="Société à responsabilité limitée Unipersonnelle (SARLU )" value="sarlu">Société à responsabilité limitée Unipersonnelle (SARLU )</option>
+     <option label="GIE" value="gie">GIE</option>
+     <option label="Entreprise Individuelle (E.I)" value="individuelle">Entreprise Individuelle (E.I)</option>
+     <option label="Commerce général" value="cg">Commerce général</option>
+   </select>
+        </div>
+  <div class="form-group">
+    <input type="text" class="fadeIn second" name="protocole_accord_c" placeholder="Protocole d'accord" class="form-control" [(ngModel)]="compte.protocole">
+  </div>
+<div class="form-group">
+    <input type="text" class="fadeIn second" name="raison__social_c" placeholder="Raison social" class="form-control" [(ngModel)]="compte.raison">
+  </div>
+  <div class="form-group">
+  <label for="scoring_client_c">Scoring client:</label>
+  <select style="width: 90%" name="scoring_client_c" class="form-control" id="scoring_client_c" [(ngModel)]="compte.score">
+    <option label="Aucun" value="aucun" selected="selected">Aucun</option>
+    <option label="Client indélicat" value="indelicat">Client indélicat</option>
+  </select>
+ </div>
+  <button type="button" class="btn btn-primary btn-lg btn-block"
+           aria-controls="collapseExample">
+    Toggle
+  </button>
+  <div class="form-group">
+    <input type="text" class="fadeIn second" name="administration_publique_c" placeholder="Administration public" class="form-control" [(ngModel)]="compte.administration">
+  </div>
+  <div class="form-group">
+    <label for="segment_marche_c">Segment de marché:</label>
+    <select style="width: 90%" name="segment_marche_c" id="segment_marche_c" class="form-control" [(ngModel)]="compte.segmentmarche">
+      <option label="Sélectionner" value="selectionner" selected="selected">Sélectionner</option>
+      <option label="B2B" value="b2b">B2B</option>
+      <option label="Opérateur" value="operateur">Opérateur</option>
+      <option label="Distributeur" value="distributeur">Distributeur</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="segment_marche_c">Segment de valeur:</label>
+    <select name="segment_valeur_c" id="segment_valeur_c" title="" class="form-control" [(ngModel)]="compte.segmentvaleur">
+      <option value="b2b_selectionner">Sélectionner</option>
+      <option value="b2b_grande">Grande entreprise</option>
+      <option value="b2b_pme">PME-PMI</option>
+      <option value="b2b_tpe">TPE</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="region_commercial_c">Région commercial:</label>
+    <select style="width: 90%" name="region_commercial_c" id="region_commercial_c" class="form-control" [(ngModel)]="compte.region">
+      <option label="Selectionner" value="null">Selectionner</option>
+      <option label="Niamey" value="Niamey">Niamey</option>
+      <option label="Zinder" value="Zinder">Zinder</option>
+      <option label="Agadez" value="Agadez">Agadez</option>
+      <option label="Diffa" value="Diffa">Diffa</option>
+      <option label="Dosso" value="Dosso">Dosso</option>
+      <option label="Maradi" value="Maradi">Maradi</option>
+      <option label="Tahoua" value="Tahoua">Tahoua</option>
+      <option label="Tillaberi" value="Tillaberi">Tillaberi</option>
+      <option label="" value=""></option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nature_compte_c">Nature compte:</label>
+    <select style="width: 90%" name="nature_compte_c" id="nature_compte_c" class="form-control" [(ngModel)]="compte.nature">
+      <option label="Présidence" value="presidence">Présidence</option>
+      <option label="Ministère" value="ministere">Ministère</option>
+      <option label="Direction" value="direction">Direction</option>
+      <option label="Entreprise Publique" value="entreprise">Entreprise Publique</option>
+      <option label="Armée" value="Armee">Armée</option>
+      <option label="Ecoles" value="ecoles">Ecoles</option>
+      <option label="Université" value="Universite">Université</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="text" class="fadeIn second" name="agence_de_creation_c" placeholder="Administration public" class="form-control" [(ngModel)]="compte.agence">
+  </div>
+  <div class="form-group">
+    <label for="nature_compte_c">Association:</label>
+    <select style="width: 90%" name="association_c" id="association_c" class="form-control" [(ngModel)]="compte.association" >
+      <option label="Non" value="non" selected="selected">Non</option>
+      <option label="Oui" value="oui">Oui</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nature_compte_c">Jour priviligié:</label>
+    <select style="width: 90%" name="jour_c" id="jour_c" class="form-control" [(ngModel)]="compte.jour">
+      <option label="Sélectionner" value="selectionner">Sélectionner</option>
+      <option label="Lundi" value="lundi">Lundi</option>
+      <option label="Mardi" value="mardi">Mardi</option>
+      <option label="Mercredi" value="mercredi">Mercredi</option>
+      <option label="Jeudi" value="jeudi">Jeudi</option>
+      <option label="Vendredi" value="vendredi">Vendredi</option>
+      <option label="Samedi" value="samedi">Samedi</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="heure_privi_c">Heure priviligié:</label>
+    <select style="width: 90%" name="heure_privi_c" id="heure_privi_c" class="form-control" [(ngModel)]="compte.heure">
+      <option label="Matin" value="matin">Matin</option>
+      <option label="Après-midi" value="apres_midi">Après-midi</option>
+      <option label="Soir" value="soir">Soir</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="com_priv_c">Mode de communication:</label>
+    <select style="width: 90%" name="com_priv_c" id="com_priv_c" class="form-control" [(ngModel)]="compte.communication">
+      <option label="sans preference" value="sans_preference">sans preference</option>
+      <option label="courrier electronique" value="courrier_electronic">courrier electronique</option>
+      <option label="telephone" value="telephone">telephone</option>
+      <option label="telecopie" value="telecopie">telecopie</option>
+      <option label="courrier postal" value="courrier_postal">courrier postal</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="prospect_origine_c">Prospect origine:</label>
+    <select style="width: 90%" name="prospect_origine_c" id="prospect_origine_c" title="" class="form-control" [(ngModel)]="compte.prospect">
+      <option label="" value=""></option>
+      <option label="Appel de prospection" value="Cold Call">Appel de prospection</option>
+      <option label="Client existant" value="Existing Customer">Client existant</option>
+      <option label="Récurrent" value="Self Generated">Récurrent</option>
+      <option label="Employé" value="Employee">Employé</option>
+      <option label="Partenaire" value="Partner">Partenaire</option>
+      <option label="Relation publique" value="Public Relations">Relation publique</option>io
+      <option label="Mailing" value="Direct Mail">Mailing</option>
+      <option label="Conférence" value="Conference">Conférence</option>
+      <option label="Salon" value="Trade Show">Salon</option>
+      <option label="Site web" value="Web Site">Site web</option>
+      <option label="Recommandé" value="Word of mouth">Recommandé</option>
+      <option label="E-mail" value="Email">E-mail</option>
+      <option label="Campagne" value="Campaign">Campagne</option>
+      <option label="Autre" value="Other">Autre</option>
+    </select>
+  </div>
+
+
+<div class="form-group">
+  <label class="radio-inline"><input type="radio" name="documents_marketing_c" value="Oui" class="form-control" [(ngModel)]="compte.radio">Oui</label>
+  <label class="radio-inline"><input type="radio" name="documents_marketing_c" value="Non" class="form-control" [(ngModel)]="compte.radio">Non</label>
+</div>
+<div class="form-group">
+  <label class="radio-inline"><input type="radio" name="exonere_de_taxe_c" value="Oui" class="form-control" [(ngModel)]="compte.radio1">Oui</label>
+  <label class="radio-inline"><input type="radio" name="exonere_de_taxe_c" value="Non" class="form-control" [(ngModel)]="compte.radio1">Non</label>
+</div>
+
+  <button (click)="saveCompte(f)" class="btn btn-primary" id="test1">
+    Ajouter Compte
+  </button>
+</form>
+</div>
+
+

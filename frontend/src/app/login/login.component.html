@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+        
+    <span>Connexion Orange CRM</span>
+  </mat-toolbar> 
+        <div class='col-md-3' style="margin-left: 75%;"><br>
+                <div class="form-group">
+                    <select class='form-control'>
+                            <option>Français</option>
+                            <option>Anglais</option>
+                    </select>
+                </div>
+        </div>
+<br>
+
+<div class="row">
+<div class="col-md-3">
+       
+</div>
+  <div class="col-md-4">
+        <mat-card class="my-card">
+            <mat-card-content>
+                <form #login ="ngForm" (ngSubmit) ="Authentificated(login)" class="my-form">
+                <mat-form-field class="full-width">
+                    <mat-label> Username </mat-label>
+                    <input  matInput  placeholder="Email" name="username" name="username" [(ngModel)]="model.username">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input  matInput type="password" placeholder="password" name="password"  name="password" [(ngModel)]="model.password">
+                </mat-form-field>
+                <button class="btn btn-warning btn-block">Login </button>
+            </form>
+            </mat-card-content>
+
+            <mat-card-actions>
+                
+            </mat-card-actions>
+        </mat-card>
+</div>
+</div>
